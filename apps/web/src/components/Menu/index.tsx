@@ -40,6 +40,7 @@ const Menu = (props) => {
   )
   const [showPhishingWarningBanner] = usePhishingBanner()
 
+console.log(useMenuItems(onUSCitizenModalPresent))
   let menuItems = [] //useMenuItems(onUSCitizenModalPresent)
 
   if (window?.SO_LotteryConfig?.menu) {

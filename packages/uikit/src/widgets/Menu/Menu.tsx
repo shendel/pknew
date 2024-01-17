@@ -134,6 +134,14 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
   const subLinksWithoutMobile = useMemo(() => subLinks?.filter((subLink) => !subLink.isMobileOnly), [subLinks]);
   const subLinksMobileOnly = useMemo(() => subLinks?.filter((subLink) => subLink.isMobileOnly), [subLinks]);
   const providerValue = useMemo(() => ({ linkComponent }), [linkComponent]);
+  
+  const mobileMenu = [
+    {
+      hideSubNav: true,
+      label: 'Menu',
+      items: links
+    }
+  ]
   return (
     <MenuContext.Provider value={providerValue}>
       <AtomBox
@@ -215,11 +223,9 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
         mb={[`${MOBILE_MENU_HEIGHT}px`, null, "0px"]}
       />
       */}
-      {/*
       <AtomBox display={{ xs: "block", md: "none" }}>
-        <BottomNav items={links} activeItem={activeItem} activeSubItem={activeSubItem} />
+        <BottomNav items={mobileMenu} activeItem={activeItem} activeSubItem={activeSubItem} />
       </AtomBox>
-      */}
     </MenuContext.Provider>
   );
 };
