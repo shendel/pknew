@@ -63,6 +63,7 @@ function MPGlobalHooks() {
   return null
 }
 
+
 function MyApp(props: AppProps<{ initialReduxState: any; dehydratedState: any }>) {
   const { pageProps, Component } = props
   const store = useStore(pageProps.initialReduxState)
@@ -84,6 +85,54 @@ function MyApp(props: AppProps<{ initialReduxState: any; dehydratedState: any }>
           <script src="https://public.bnbstatic.com/static/js/mp-webview-sdk/webview-v1.0.0.min.js" id="mp-webview" />
         )}
       </Head>
+      <Script
+        dangerouslySetInnerHTML={{
+          __html: `
+          window.SO_LotteryConfig = {
+            chainId: "56",
+            chainName: "Binance Smart Chain",
+            rpc: "https://bsc-dataseed.binance.org/",
+            etherscan: "https://bscscan.com",
+            contract: "0xdF82A1531DB5Bcd01bb3F71d81cBaD06a8bEd116",
+            token: {
+                address: "0x55d398326f99059fF775485246999027B3197955",
+                chainId: "56",
+                decimals: "18",
+                symbol: "USDT",
+                name: "Tether USD",
+                price: false,
+                viewDecimals: 2
+            },
+            native: {
+                name: "Binance Coin",
+                symbol: "BNB",
+                decimals: 18
+            },
+            buyTokenLink: "https://pancakeswap.finance/swap?outputCurrency=0x55d398326f99059fF775485246999027B3197955",
+            numbersCount: "6",
+            hideServiceLink: false,
+            winPercents: {
+                burn: 10,
+                match_1: 2,
+                match_2: 3,
+                match_3: 5,
+                match_4: 15,
+                match_5: 25,
+                match_6: 50
+            },
+            menu: [
+                {
+                    title: "Home",
+                    target: "",
+                    link: "https://ibitbnb.com",
+                    blank: true
+                }
+            ],
+            logo: "https://i.postimg.cc/dt67B6n5/ibitbnb.jpg"
+          }
+            `,
+          }}
+        />
       <DefaultSeo {...SEO} />
       <Providers store={store} dehydratedState={pageProps.dehydratedState}>
         <PageMeta />
@@ -102,19 +151,6 @@ function MyApp(props: AppProps<{ initialReduxState: any; dehydratedState: any }>
           </PersistGate>
         </Blocklist>
       </Providers>
-      <Script
-        strategy="afterInteractive"
-        id="google-tag"
-        dangerouslySetInnerHTML={{
-          __html: `
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','${process.env.NEXT_PUBLIC_NEW_GTAG}');
-          `,
-        }}
-      />
     </>
   )
 }
@@ -160,9 +196,9 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
           <Component {...pageProps} />
         </Layout>
       </ShowMenu>
-      <EasterEgg iterations={2} />
+      {/*<EasterEgg iterations={2} />*/}
       <ToastListener />
-      <FixedSubgraphHealthIndicator />
+      {/*<FixedSubgraphHealthIndicator />*/}
       <NetworkModal pageSupportedChains={Component.chains} />
       <TransactionsDetailModal />
       {isShowScrollToTopButton && <ScrollToTopButtonV2 />}
