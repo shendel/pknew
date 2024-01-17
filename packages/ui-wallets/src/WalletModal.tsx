@@ -81,12 +81,14 @@ const TabContainer = ({ children, docLink, docText }: PropsWithChildren<{ docLin
 
   return (
     <AtomBox position="relative" zIndex="modal" className={modalWrapperClass}>
+      {/*
       <AtomBox position="absolute" style={{ top: '-50px' }}>
         <TabMenu activeIndex={index} onItemClick={setIndex} gap="0px" isColorInverse isShowBorderBottom={false}>
           <Tab>{t('Connect Wallet')}</Tab>
           <Tab>{t('What’s a Web3 Wallet?')}</Tab>
         </TabMenu>
       </AtomBox>
+      */}
       <AtomBox
         display="flex"
         position="relative"
@@ -100,11 +102,13 @@ const TabContainer = ({ children, docLink, docText }: PropsWithChildren<{ docLin
         width="100%"
       >
         {index === 0 && children}
+        {/*
         {index === 1 && (
           <Suspense>
             <StepIntro docLink={docLink} docText={docText} />
           </Suspense>
         )}
+        */}
       </AtomBox>
     </AtomBox>
   )
@@ -168,6 +172,7 @@ function MobileModal<T>({
           }}
         />
       </AtomBox>
+      {/*
       <AtomBox p="24px" borderTop="1">
         <AtomBox>
           <Text textAlign="center" color="textSubtle" as="p" mb="24px">
@@ -178,6 +183,7 @@ function MobileModal<T>({
           {docText}
         </Button>
       </AtomBox>
+      */}
     </AtomBox>
   )
 }
@@ -248,6 +254,7 @@ function WalletSelect<T>({
           </Button>
         )
       })}
+      {/*
       {!showMore && wallets.length > walletDisplayCount && (
         <AtomBox display="flex" justifyContent="center" alignItems="center" flexDirection="column">
           <Button height="auto" variant="text" as={AtomBox} flexDirection="column" onClick={() => setShowMore(true)}>
@@ -266,6 +273,7 @@ function WalletSelect<T>({
           </Button>
         </AtomBox>
       )}
+      */}
     </AtomBox>
   )
 }
@@ -355,6 +363,7 @@ function DesktopModal<T>({
           }}
         />
       </AtomBox>
+      {/*
       <AtomBox
         flex={1}
         mx="24px"
@@ -384,6 +393,7 @@ function DesktopModal<T>({
           {selected && selected.installed === false && <NotInstalled qrCode={qrCode} wallet={selected} />}
         </AtomBox>
       </AtomBox>
+      */}
     </>
   )
 }

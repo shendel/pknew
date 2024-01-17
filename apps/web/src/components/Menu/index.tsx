@@ -40,8 +40,18 @@ const Menu = (props) => {
   )
   const [showPhishingWarningBanner] = usePhishingBanner()
 
-  const menuItems = useMenuItems(onUSCitizenModalPresent)
+  let menuItems = [] //useMenuItems(onUSCitizenModalPresent)
 
+  if (window?.SO_LotteryConfig?.menu) {
+    menuItems = window.SO_LotteryConfig.menu.map((item) => {
+      return {
+        href: item.link,
+        label: item.title,
+        blank: item.blank,
+        showItemsOnMobile: true
+      }
+    })
+  }
   const activeMenuItem = getActiveMenuItem({ menuConfig: menuItems, pathname })
   const activeSubMenuItem = getActiveSubMenuItem({ menuItem: activeMenuItem, pathname })
 

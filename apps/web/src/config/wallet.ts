@@ -74,6 +74,7 @@ const walletsConfig = ({
       qrCode,
       downloadLink: 'https://metamask.app.link/dapp/pancakeswap.finance/',
     },
+    /*
     {
       id: 'BinanceW3W',
       title: 'Binance Web3 Wallet',
@@ -126,12 +127,14 @@ const walletsConfig = ({
       },
       qrCode,
     },
+    */
     {
       id: 'walletconnect',
       title: 'WalletConnect',
       icon: `${ASSET_CDN}/web/wallets/walletconnect.png`,
       connectorId: ConnectorNames.WalletConnect,
     },
+    /*
     {
       id: 'opera',
       title: 'Opera Wallet',
@@ -242,6 +245,7 @@ const walletsConfig = ({
       icon: `${ASSET_CDN}/web/wallets/ledger.png`,
       connectorId: ConnectorNames.Ledger,
     },
+    */
   ]
 }
 

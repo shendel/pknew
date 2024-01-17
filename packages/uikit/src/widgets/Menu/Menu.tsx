@@ -154,9 +154,11 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
                 </AtomBox>
               </Flex>
               <Flex alignItems="center" height="100%">
+                {/*
                 <AtomBox mr="12px" display={{ xs: "none", lg: "block" }}>
                   <CakePrice chainId={chainId} showSkeleton={false} cakePriceUsd={cakePriceUsd} />
                 </AtomBox>
+                */}
                 <Box mt="4px">
                   <LangSelector
                     currentLang={currentLang}
@@ -171,6 +173,7 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
               </Flex>
             </StyledNav>
           </FixedContainer>
+          {/*
           {subLinks ? (
             <Flex justifyContent="space-around" overflow="hidden">
               <SubMenuItems
@@ -191,11 +194,13 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
           ) : (
             <div />
           )}
+          */}
           <BodyWrapper mt={!subLinks ? `${totalTopMenuHeight + 1}px` : "0"}>
             <Inner>{children}</Inner>
           </BodyWrapper>
         </Wrapper>
       </AtomBox>
+      {/*
       <Footer
         chainId={chainId}
         items={footerLinks}
@@ -209,9 +214,12 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
         buyCakeLink={buyCakeLink}
         mb={[`${MOBILE_MENU_HEIGHT}px`, null, "0px"]}
       />
+      */}
+      {/*
       <AtomBox display={{ xs: "block", md: "none" }}>
         <BottomNav items={links} activeItem={activeItem} activeSubItem={activeSubItem} />
       </AtomBox>
+      */}
     </MenuContext.Provider>
   );
 };
