@@ -13,6 +13,7 @@ export interface ExtendEthereum extends WindowProvider {
 declare global {
   interface Window {
     coin98?: true
+    SO_LotteryConfig?: any
     mercuryoWidget?: any
     ethereum?: ExtendEthereum
     BinanceChain?: {

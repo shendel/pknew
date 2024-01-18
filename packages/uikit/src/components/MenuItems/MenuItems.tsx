@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+// @ts-ignore
 import { createElement, memo } from "react";
 import { Flex } from "../Box";
 import isTouchDevice from "../../util/isTouchDevice";

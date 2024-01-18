@@ -224,6 +224,7 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
       />
       */}
       <AtomBox display={{ xs: "block", md: "none" }}>
+        {/* @ts-ignore */}
         <BottomNav items={mobileMenu} activeItem={activeItem} activeSubItem={activeSubItem} />
       </AtomBox>
     </MenuContext.Provider>

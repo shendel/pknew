@@ -86,6 +86,7 @@ function MyApp(props: AppProps<{ initialReduxState: any; dehydratedState: any }>
         )}
       </Head>
       <Script
+        id="devLotteryVars"
         dangerouslySetInnerHTML={{
           __html: `
           window.SO_LotteryConfig = {
